@@ -1,0 +1,51 @@
+@font-face {
+  font-family: 'EarlyFontDiary';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_220508@1.0/EarlyFontDiary.woff2')
+    format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: 'EarlyFontDiary', sans-serif;
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+  overflow: hidden;
+  background-color: #ffe69a;
+}
+button {
+  cursor: pointer;
+}
+
+#member-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+table {
+  width: 80%;
+  border-collapse: collapse;
+  margin: 10px 0;
+  text-align: center;
+}
+
+th,
+td {
+  padding: 5px;
+  border-bottom: 1px solid #fff;
+}
+
+button {
+  width: 30%;
+  height: 30px;
+  cursor: pointer;
+  border: none;
+  background-color: #ffd24c;
+  color: #000;
+  font-family: 'EarlyFontDiary', sans-serif;
+  border-radius: 3px;
+  font-weight: bold;
+  margin: 3px;
+}

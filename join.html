@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌼JOIN🌼</title>
+    <link rel="stylesheet" href="css/join.css">
+</head>
+
+<body>
+    <div id="joinPage" class="page">
+        <form action="javascript:saveMemberList();" class="memberFrm" name="memberFrm">
+            <div class="title">
+                <h1>회원가입</h1>
+            </div>
+            <div class="email">
+                <input type="email" name="email" id="email" placeholder="이메일을 입력해 주세요" required>
+                <div class="error" id="emailError"></div>
+            </div>
+            <div class="name">
+                <input type="text" name="userName" id="userName" placeholder="이름을 입력해 주세요" required>
+                <div class="error" id="userNameError"></div>
+            </div>
+            <div class="password">
+                <input type="password" name="password" id="password" placeholder="비밀번호를 입력해 주세요" required>
+                <div id="eye1" class="eyeButton">👀</div>
+            </div>
+            <div class="error" id="passwordError"></div>
+            <div class="passwordCheck">
+                <input type="password" name="passwordCheck" id="passwordCheck" placeholder="비밀번호를 다시 입력해 주세요" required>
+                <div id="eye2" class="eyeButton">👀</div>
+            </div>
+            <div class="error" id="passwordCheckError"></div>
+            <div class="phone">
+                <input type="text" name="phone1" id="phone1" size="1" maxlength="3" required>
+                <input type="text" name="phone2" id="phone2" size="3" maxlength="4" required>
+                <input type="text" name="phone3" id="phone3" size="3" maxlength="4" required>
+            </div>
+            <div class="error" id="phoneError"></div>
+            <div class="area">
+                <select name="area" id="area" required>
+                    <option selected disabled>지역을 선택하세요</option>
+                    <option>서울</option>
+                    <option>인천</option>
+                    <option>경기</option>
+                </select>
+            </div>
+            <div class="gender">
+                <span>성별을 선택하세요 : </span>
+                <input type="radio" name="gender" id="gender_man">남성
+                <input type="radio" name="gender" id="gender_woman">여성
+            </div>
+            <div class="line">
+                <hr>
+            </div>
+            <div class="signUp">
+                <button onclick="back();">뒤로가기</button>
+                <button type="submit" id="signUpButton">가입하기</button>
+            </div>
+        </form>
+    </div>
+    <script src="js/js_join.js"></script>
+</body>
+
+</html>

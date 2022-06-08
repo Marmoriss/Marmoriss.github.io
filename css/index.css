@@ -1,0 +1,334 @@
+/* 전체 적용 효과 */
+@font-face {
+  font-family: 'EarlyFontDiary';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_220508@1.0/EarlyFontDiary.woff2')
+    format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: 'EarlyFontDiary', sans-serif;
+}
+html {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+.page {
+  width: 100%;
+  height: 100%;
+
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+  overflow: hidden;
+}
+.page:nth-child(2),
+.page:nth-child(4),
+.page:nth-child(6) {
+  background-color: #ffe69a;
+}
+.page:nth-child(1),
+.page:nth-child(3),
+.page:nth-child(5) {
+  background-color: #92b4ec;
+  color: #fff;
+}
+button {
+  cursor: pointer;
+}
+aside {
+  width: 50px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+}
+
+aside ul {
+  padding: 0;
+}
+
+aside a {
+  text-decoration-line: none;
+}
+/* 첫번째 페이지 */
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#page-1 h2 {
+  color: aliceblue;
+  position: relative;
+  top: 100px;
+  text-align: center;
+}
+#profile {
+  position: relative;
+  top: 100px;
+  background-image: url(../images/프로필사진.jpg);
+  width: 250px;
+  height: 250px;
+  border-radius: 30%;
+  background-position: center;
+  background-size: cover;
+}
+nav {
+  position: relative;
+  top: 80px;
+}
+.navi {
+  display: flex;
+  padding: 0;
+  margin: 20px auto;
+  justify-content: center;
+}
+
+ul li {
+  list-style: none;
+  margin: 30px;
+  font-size: large;
+}
+#btn {
+  text-decoration-line: none;
+  color: inherit;
+  position: relative;
+  z-index: 2;
+}
+#btn:before {
+  content: '';
+  position: absolute;
+  background-color: #fff;
+  height: 25px;
+
+  width: 0;
+  bottom: 0;
+  transition: 0.7s;
+
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+  border-radius: 10px / 50%;
+}
+#btn:hover:before {
+  width: 110%;
+}
+#btn:hover {
+  color: #ffd24c;
+}
+
+/* 두번째 페이지 */
+
+#page-2 {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-evenly;
+  align-items: center;
+}
+#introduce {
+  width: 400px;
+  height: 300px;
+  padding: 30px;
+  text-align: center;
+}
+
+#img1 {
+  position: relative;
+  background-image: url(../images/page2_img.jpg);
+  width: 300px;
+  height: 300px;
+  background-position: center;
+  background-size: cover;
+}
+
+/* 세번째 페이지 */
+#page-3 {
+  text-align: center;
+}
+.frame {
+  width: 800px;
+  height: 370px;
+  overflow: hidden;
+  margin: auto;
+}
+.slide_list {
+  width: 800px;
+  height: 370px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  transition: transform 1s;
+}
+.slide {
+  width: 800px;
+  height: 370px;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+}
+.slide img {
+  width: 300px;
+  height: 300px;
+  background-position: center;
+  background-size: cover;
+  margin: 10px;
+}
+.slide span {
+  width: 450px;
+  display: inline;
+  margin: 10px;
+}
+#buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+#prev,
+#next {
+  width: 50px;
+  text-align: center;
+  font-size: 50px;
+  border: none;
+  background-color: #92b4ec;
+}
+
+/* 네번째 페이지 */
+
+#page-4 h1 {
+  display: block;
+  text-align: center;
+  position: relative;
+  top: 10px;
+}
+
+.containers {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.container {
+  width: 300px;
+  height: 410px;
+  perspective: 800px;
+  /* 부모의 자식요소가 3차원의 애니메이션 효과를 가질 때,
+  800px의 거리에서 보는 원근감을 줌 */
+  position: relative;
+}
+
+.container .item {
+  width: 300px;
+  height: 410px;
+  backface-visibility: hidden;
+  /* 카드 뒷면을 안보이게 처리. 카드가 뒤집히면 뒷면이 안보임. */
+  transition: 1s;
+  text-align: center;
+  background-color: #ffd24c;
+  border-radius: 30px;
+}
+
+.container .item.front {
+  display: flex;
+  position: absolute;
+  transform: rotateY(0deg);
+  align-items: center;
+  justify-content: center;
+}
+.container .item.front span {
+  font-size: 20px;
+}
+
+.container:hover .item.front {
+  transform: rotateY(180deg);
+}
+
+.container .item.back {
+  transform: rotateY(-180deg);
+}
+
+.container:hover .item.back {
+  transform: rotateY(0deg);
+}
+
+#dduckddack {
+  background-image: url(../images/기죽지않는뚝딱이.jpg);
+  position: relative;
+  width: 300px;
+  height: 300px;
+  background-position: center;
+  background-size: cover;
+}
+#typingCat {
+  background-image: url(../images/타자치는\ 고양이.gif);
+  position: relative;
+  width: 300px;
+  height: 300px;
+  background-position: center;
+  background-size: cover;
+  border-radius: 30px;
+}
+
+/* 다섯번째 페이지 */
+#page-5 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+#goodBye {
+  width: 400px;
+  height: 300px;
+  padding: 30px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.logInBox {
+  padding: 8px;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#page-5 input {
+  width: 316px;
+  border: 1px solid black;
+  border-radius: 3px;
+  line-height: 30px;
+  font-size: 12px;
+  padding-left: 10px;
+  margin: 5px;
+}
+.logInBox a {
+  text-decoration-line: none;
+  color: inherit;
+}
+
+#logBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#logBtn button {
+  width: 330px;
+  height: 30px;
+  margin: 5px;
+  cursor: pointer;
+  border: none;
+  background-color: #ffd24c;
+  color: #000;
+  font-family: 'EarlyFontDiary', sans-serif;
+  border-radius: 3px;
+  font-weight: bold;
+}

@@ -1,0 +1,132 @@
+@font-face {
+  font-family: 'EarlyFontDiary';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_220508@1.0/EarlyFontDiary.woff2')
+    format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: 'EarlyFontDiary', sans-serif;
+  background-color: #ffe69a;
+}
+.page {
+  width: 100%;
+  height: 100%;
+
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+  overflow: hidden;
+}
+button {
+  cursor: pointer;
+}
+
+#joinPage {
+  color: #000;
+  margin: 0px;
+  box-sizing: border-box;
+  font-size: 11px;
+  display: flex;
+}
+#joinPage div {
+  padding-top: 3px;
+  padding-bottom: 5px;
+}
+#joinPage h1 {
+  margin: 5px;
+}
+
+#joinPage input {
+  border: 1px solid black;
+  border-radius: 3px;
+  line-height: 30px;
+  font-size: 12px;
+  padding-left: 10px;
+}
+
+.memberFrm {
+  padding: 8px;
+  width: 40%;
+  margin: auto;
+}
+
+.title {
+  text-align: center;
+  font-weight: 700;
+}
+
+#joinPage .email input,
+#joinPage .name input {
+  width: 90%;
+}
+
+.password input,
+.passwordCheck input {
+  width: 100%;
+}
+
+.password,
+.passwordCheck {
+  display: flex;
+  align-items: center;
+}
+.eyeButton {
+  font-style: normal;
+  font-size: 15px;
+  margin-left: 5px;
+  background-color: #ffe69a;
+  border: none;
+  cursor: pointer;
+}
+.phone {
+  display: flex;
+  justify-content: space-between;
+  line-height: 30px;
+}
+
+#phone1 {
+  width: 18%;
+}
+#phone2 {
+  width: 30%;
+}
+#phone3 {
+  width: 30%;
+}
+
+.area select {
+  width: 100%;
+  height: 30px;
+}
+
+.gender {
+  text-align: center;
+  font-size: 15px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.signUp {
+  display: flex;
+}
+.signUp button {
+  width: 50%;
+  height: 30px;
+  border: none;
+  background-color: #ffd24c;
+  color: #000;
+  font-family: 'EarlyFontDiary', sans-serif;
+  border-radius: 3px;
+  font-weight: bold;
+  margin: 3px;
+}
+
+.error {
+  font-size: 1px;
+  height: 20px;
+  color: red;
+  font-weight: 700;
+}
